@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Portfolio Website Design</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <style>
+    
+    * {
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+            font-family: Poppins, sans-serif;
+            text-decoration: none;
+        }
+        body {
+            overflow-x: hidden;
+            font-family: Arial, sans-serif;
+            background-color: #2d2d2f;
+            margin: 0;
+            padding: 0;
+        }
+        .hero-header {
+            width: 100%;
+            height: 100%;
+            min-height: 100vh;
+            background: #222;
+        }
+        .wrapper {
+            width: 1280px;
+            max-width: 95%;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        header {
+            padding: 40px 0 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .logo {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .logo i {
+            height: 45px;
+            width: 45px;
+            background-color: #007ced;
+            border-radius: 50%;
+            color: #fff;
+            font-weight: 700;
+            font-size: 1.5rem;
+            padding: 10px;
+            margin-right: 5px;
+            cursor: pointer;
+            text-align: center;
+        }
+        .logo .logo-text {
+            font-size: 24px;
+            font-weight: 500;
+            color: #fff;
+        }
+        nav .togglebtn {
+            width: 35px;
+            height: 35px;
+            position: absolute;
+            top: 45px;
+            right: 3%;
+            z-index: 5;
+            cursor: pointer;
+            display: none;
+        }
+        nav .togglebtn span {
+            display: block;
+            background-color: #007ced;
+            margin: 5px 0px;
+            width: 100%;
+            height: 3px;
+            transition: 0.3s;
+            transition-property: transform, opacity;
+        }
+        nav .navlinks {
+            list-style-type: none;
+        }
+        nav .navlinks li {
+            display: inline-block;
+        }
+        nav .navlinks li a {
+            color: #e5e5e5;
+            margin-right: 2.5rem;
+        }
+        .container {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            padding-top: 4rem;
+        }
+        .hero-text {
+            max-width: 500px;
+            display: flex;
+            flex-direction: column;
+        }
+        .hero-text h5 {
+            color: #e5e5e5;
+            font-size: 14px;
+        }
+        .hero-text h5 span {
+            color: #007ced;
+            font-size: 16px;
+        }
+        .hero-text h1 {
+            color: #007ced;
+            font-size: 3rem;
+        }
+        .hero-text p {
+            color: #e5e5e5;
+        }
+        .btn-group {
+            margin: 45px 0;
+        }
+        .btn-group .btn {
+            border-color: #d5d5d5;
+            color: #fff;
+            background-color: #333;
+            padding: 12px 25px;
+            margin: 5px 0px;
+            margin-right: 7px;
+            border-radius: 30px;
+            border: 2px solid #e5e5e5;
+            box-shadow: 0 10px 10px -8px rgb(0 0 0 / 78%);
+        }
+        .btn.active {
+            border-color: #007ced;
+        }
+        .hero-text .social i {
+            color: #e5e5e5;
+            font-size: 18px;
+            margin-right: 10px;
+            transition: 0.5s;
+        }
+        .hero-text .social i:hover {
+            color: #007ced;
+            transform: rotate(360deg);
+        }
+        /* Responsive design & displaying navbar for small screen */
+        @media (max-width: 930px) {
+            nav .togglebtn {
+                display: initial;
+            }
+            /* for toggle button */
+            .click {
+                top: 45px;
+            }
+            .click span {
+                position: absolute;
+                margin-top: 12px
+            }
+            .click span:first-child {
+                transform: rotate(-40deg);
+            }
+            .click span:nth-child(2) {
+                opacity: 0;
+                margin: 0;
+            }
+            .click span:last-child {
+                transform: rotate(45deg);
+                top: 0;
+            }
+            nav .navlinks {
+                position: absolute;
+                top: 110px;
+                right: -100%;
+                bottom: 0;
+                width: 60%;
+                height: 100vh;
+                background-color: #222;
+                z-index: 3;
+                box-shadow: 5px 13px 30px rgba(0, 0, 0, 0.1);
+                transition: 0.5s;
+                padding: 25px 0px;
+            }
+            nav .navlinks li {
+                display: block;
+            }
+            nav .navlinks li a {
+                display: block;
+                margin-bottom: 15px;
+                text-align: center;
+            }
+            nav .navlinks.open {
+                right: 0;
+            }
+        }
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                padding-top: 2rem
+            }
+            .hero-text {
+                padding: 40px 0px;
+            }
+        }
+        .contact-section {
+            background: #333;
+            padding: 20px;
+            max-width: 600px;
+            margin: 40px auto;
+            border-radius: 8px;
+        }
+        .contact-section h2 {
+            text-align: center;
+            color: #fff;
+        }
+        .contact-section form {
+            display: flex;
+            flex-direction: column;
+        }
+        .contact-section label {
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #ddd;
+        }
+        .contact-section input,
+        .contact-section textarea {
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #555;
+            border-radius: 4px;
+            background-color: #444;
+            color: #fff;
+        }
+        .contact-section button {
+            padding: 12px;
+            background-color: #0056b3;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .contact-section button:hover {
+            background-color: #004494;
+        }
+        .education-cards {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            padding: 20px;
+            justify-content: center;
+        }
+        .school {
+            flex: 1 1 calc(30% - 10px);
+            box-sizing: border-box;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 15px;
+            background-color: #333;
+            color: white;
+        }
+        .school h2 {
+            margin-top: 0;
+        }
+        .school img {
+            width: 75%;
+            height: auto;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+        @media (max-width: 768px) {
+            .school {
+                flex: 1 1 calc(45% - 10px);
+            }
+        }
+        @media (max-width: 480px) {
+            .school {
+                flex: 1 1 100%;
+            }
+        }
+        .project-cards {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            padding: 20px 0;
+        }
+        .project-cards .card {
+            flex: 1 1 calc(30% - 20px);
+            background: #444;
+            color: #fff;
+            padding: 15px;
+            border-radius: 5px;
+            box-sizing: border-box;
+            text-align: center;
+        }
+        .project-cards .card img {
+            max-width: 60%;
+            border-radius: 5px;
+            margin-bottom: 15px;
+        }
+        .project-cards .card h3 {
+            margin: 10px 0;
+        }
+        .project-cards .card p {
+            margin-bottom: 10px;
+        }
+        @media (max-width: 768px) {
+            .project-cards .card {
+                flex: 1 1 calc(45% - 20px);
+            }
+        }
+        @media (max-width: 480px) {
+            .project-cards .card {
+                flex: 1 1 100%;
+            }
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="hero-header">
+        <div class="wrapper">
+            <header>
+                <div class="logo">
+                    <i class="fa-solid fa-n"></i>
+                    <div class="logo-text">Nanda kishore</div>
+                </div>
+                <nav>
+                    <div class="togglebtn">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <ul class="navlinks">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#education">Education</a></li>
+                        <li><a href="#projects">Projects</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </nav>
+            </header>
+            <div class="container">
+                <img src="me.jpg" alt="Image" width="400">
+                <div class="hero-text">
+                    <h5>Hi I'm <span class="input"></span></h5>
+                    <h1>NANDA KISHORE YADAV</h1>
+                    <p>I am a dedicated and ambitious third-year B.Tech student specializing in Computer Science at SRM University, Amaravathi, with a strong foundation in programming and problem-solving. Proficient in C, C++, and web development technologies such as HTML and CSS, I continuously seek to expand my technical skills and knowledge.</p>
+
+                    <div class="btn-group">
+                        <a href="#contact" class="btn">Contact</a>
+                    </div>
+
+                    <div class="social">
+                        <a href="https://www.linkedin.com/in/nandakishore16/"><i class="fa-brands fa-linkedin"></i></a>
+                        <a href="https://github.com/nandakishore36"><i class="fa-brands fa-github"></i></a>
+                        <a href="#"><i class="fa-brands fa-pintrest"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section id="education">
+        <div class="wrapper">
+            <h2>Education</h2>
+            <div class="education-cards">  
+                        <div class="school">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNrHzbJIK6_NKR1Tu9OrpqZ8Y9W626fEI1DQ&s" alt="Narayana school">
+                            <h2>Narayana E.M School</h2>
+                            <span>Till 2020</span>
+                        </div>
+                        <div class="school">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNrHzbJIK6_NKR1Tu9OrpqZ8Y9W626fEI1DQ&s" alt="Narayana college">
+                            <h2>Narayana junior college</h2>
+                            <span>Till 2022</span>
+                        </div>
+                        
+                        <div class="school">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcStzDk8bQBIhY_8TOAhzcxenp8ZNr97i59uZCHDi-Bbd6QqJTX9Rk4-Wukpmgkb2Ju69xE&usqp=CAU" alt="SRM University">
+                            <h2>SRM University</h2>
+                            <span>Till 2026</span>
+                        </div>
+                    </div>
+                </div>
+    
+            </div>
+        </div>
+    </section>
+
+
+    <section id="projects">
+        <div class="wrapper">
+            <h2>Projects</h2>
+            <div class="project-cards">
+                <div class="card">
+                    <img src="https://5.imimg.com/data5/EN/AG/PS/SELLER-73014895/restaurant-management-system-500x500.jpg" alt="Restaurant Management System">
+                    <h3>Restaurant Management System</h3>
+                    <p>Take orders online through the website.</p>
+                </div>
+                <div class="card">
+                    <img src="https://electronicpay.in/wp-content/uploads/2019/01/Card-Management-System.jpg" alt="Credit Card Validity Checker">
+                    <h3>Credit Card Validity Checker</h3>
+                    <p>Verify if a credit card is valid or not.</p>
+                </div>
+                <div class="card">
+                    <img src="https://miro.medium.com/v2/resize:fit:800/1*VtAozzg_xdDzbuEQEDJB4A.jpeg" alt="Online Ticket Booking">
+                    <h3>Online Ticket Booking</h3>
+                    <p>Book tickets online easily.</p>
+                </div>
+                <div class="card">
+                    <img src="https://tse3.mm.bing.net/th?id=OIP.7JXjgE51a4zMVjBRgP63hQHaFW&pid=Api&P=0&h=180" alt="bill reminder ">
+                    <h3>Bill reminder </h3>
+                    <p>it will show the due date of the bill</p>
+                </div>
+                <div class="card">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTBnNuDZ-Ai4PNvz_y97XQ8L8iFs5ymYHVBZ7QNQl3q7f3XngA3GxrzA8UB3yu42_8rG5Q&usqp=CAU" alt="shopping management">
+                    <h3>shopping management </h3>
+                    <p>it shows what item u buy </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <section id="contact">
+        <div class="contact-section">
+            <h2>Contact Me</h2>
+            <form action="submit_form.php" method="post">
+
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+                
+                <button type="submit">Send</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Typed.js for typing text effect -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.10/typed.min.js"></script>
+    <script>
+        var togglebtn = document.querySelector(".togglebtn");
+        var nav = document.querySelector(".navlinks");
+
+        togglebtn.addEventListener("click", function() {
+            this.classList.toggle("click");
+            nav.classList.toggle("open");
+        });
+
+        var typed = new Typed(".input", {
+            strings: [""],
+            typeSpeed: 70,
+            backSpeed: 55,
+            loop: true
+        });
+    </script>
+</body>
+</html>

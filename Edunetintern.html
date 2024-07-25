@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Portfolio Website Design</title>
+    <link rel="stylesheet" href="intern1.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+</head>
+<body>
+    <div class="hero-header">
+        <div class="wrapper">
+            <header>
+                <div class="logo">
+                    <i class="fa-solid fa-n"></i>
+                    <div class="logo-text">Nanda kishore</div>
+                </div>
+                <nav>
+                    <div class="togglebtn">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <ul class="navlinks">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#education">Education</a></li>
+                        <li><a href="#projects">Projects</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </nav>
+            </header>
+            <div class="container">
+                <img src="me.jpg" alt="Image" width="400">
+                <div class="hero-text">
+                    <h5>Hi I'm <span class="input"></span></h5>
+                    <h1>NANDA KISHORE YADAV</h1>
+                    <p>I am a dedicated and ambitious third-year B.Tech student specializing in Computer Science at SRM University, Amaravathi, with a strong foundation in programming and problem-solving. Proficient in C, C++, and web development technologies such as HTML and CSS, I continuously seek to expand my technical skills and knowledge.</p>
+
+                    <div class="btn-group">
+                        <a href="#contact" class="btn">Contact</a>
+                    </div>
+
+                    <div class="social">
+                        <a href="https://www.linkedin.com/in/nandakishore16/"><i class="fa-brands fa-linkedin"></i></a>
+                        <a href="https://github.com/nandakishore36"><i class="fa-brands fa-github"></i></a>
+                        <a href="#"><i class="fa-brands fa-pintrest"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section id="education">
+        <div class="wrapper">
+            <h2>Education</h2>
+            <div class="education-cards">  
+                <div class="school">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNrHzbJIK6_NKR1Tu9OrpqZ8Y9W626fEI1DQ&s" alt="Narayana school">
+                    <h2>Narayana E.M School</h2>
+                    <span>Till 2020</span>
+                </div>
+                <div class="school">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNrHzbJIK6_NKR1Tu9OrpqZ8Y9W626fEI1DQ&s" alt="Narayana college">
+                    <h2>Narayana junior college</h2>
+                    <span>Till 2022</span>
+                </div>
+                <div class="school">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcStzDk8bQBIhY_8TOAhzcxenp8ZNr97i59uZCHDi-Bbd6QqJTX9Rk4-Wukpmgkb2Ju69xE&usqp=CAU" alt="SRM University">
+                    <h2>SRM University</h2>
+                    <span>Till 2026</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <div class="wrapper">
+            <h2>Projects</h2>
+            <div class="project-cards">
+                <div class="card">
+                    <img src="https://5.imimg.com/data5/EN/AG/PS/SELLER-73014895/restaurant-management-system-500x500.jpg" alt="Restaurant Management System">
+                    <h3>Restaurant Management System</h3>
+                    <p>Take orders online through the website.</p>
+                </div>
+                <div class="card">
+                    <img src="https://electronicpay.in/wp-content/uploads/2019/01/Card-Management-System.jpg" alt="Credit Card Validity Checker">
+                    <h3>Credit Card Validity Checker</h3>
+                    <p>Verify if a credit card is valid or not.</p>
+                </div>
+                <div class="card">
+                    <img src="https://miro.medium.com/v2/resize:fit:800/1*VtAozzg_xdDzbuEQEDJB4A.jpeg" alt="Online Ticket Booking">
+                    <h3>Online Ticket Booking</h3>
+                    <p>Book tickets online easily.</p>
+                </div>
+                <div class="card">
+                    <img src="https://tse3.mm.bing.net/th?id=OIP.7JXjgE51a4zMVjBRgP63hQHaFW&pid=Api&P=0&h=180" alt="bill reminder ">
+                    <h3>Bill reminder </h3>
+                    <p>it will show the due date of the bill</p>
+                </div>
+                <div class="card">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTBnNuDZ-Ai4PNvz_y97XQ8L8iFs5ymYHVBZ7QNQl3q7f3XngA3GxrzA8UB3yu42_8rG5Q&usqp=CAU" alt="shopping management">
+                    <h3>shopping management </h3>
+                    <p>it shows what item u buy </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="contact-section">
+            <h2>Contact Me</h2>
+            <form id="contact-form">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+                
+                <button type="submit">Send</button>
+            </form>
+            <div id="response-message" class="response-message"></div>
+        </div>    
+    </section>
+
+    <!-- Typed.js for typing text effect -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.10/typed.min.js"></script>
+    <script>
+        document.getElementById('contact-form').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevents the default form submission
+
+            // Retrieve form data
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const message = document.getElementById('message').value.trim();
+
+            // Simple validation
+            if (name === '' || email === '' || message === '') {
+                showResponseMessage('All fields are required.', 'error');
+                return;
+            }
+
+            // Here you could send the data to a server using fetch or XMLHttpRequest
+            // For demonstration, we'll just simulate a successful submission
+
+            // Simulate form submission success
+            showResponseMessage('Message sent successfully.', 'success');
+
+            // Optionally clear the form fields
+            document.getElementById('contact-form').reset();
+        });
+
+        function showResponseMessage(message, type) {
+            const responseMessageElement = document.getElementById('response-message');
+            responseMessageElement.textContent = message;
+            responseMessageElement.className = `response-message ${type}`;
+            responseMessageElement.style.display = 'block';
+        }
+    </script>
+</body>
+</html>

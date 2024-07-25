@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Education Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<style>
+body {
+    font-family: Arial, sans-serif;
+    background-color: black; /* Set background color to black */
+    color: white; /* Set default text color to white */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.education-portfolio {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+    justify-content: center; /* Center the portfolio items horizontally */
+}
+
+.school {
+    flex: 1 1 calc(33.333% - 20px); /* Adjust the percentage as needed for different column widths */
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 20px;
+    background-color: #333; /* Darker background for school entries */
+    color: white; /* Ensure text within school entries is white */
+}
+
+.school h2 {
+    margin-top: 0;
+    color: white; /* Set heading color to white */
+}
+
+@media (max-width: 768px) {
+    .school {
+        flex: 1 1 calc(50% - 20px);
+    }
+}
+
+@media (max-width: 480px) {
+    .school {
+        flex: 1 1 100%;
+    }
+}
+
+
+</style>
+
+<body>
+    <div class="education-portfolio">
+        <div class="school">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNrHzbJIK6_NKR1Tu9OrpqZ8Y9W626fEI1DQ&s" alt="Narayana school">
+            <h2>Narayana E.M School</h2>
+            <span>Till 2020</span>
+        </div>
+        <div class="school">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNrHzbJIK6_NKR1Tu9OrpqZ8Y9W626fEI1DQ&s" alt="Narayana college">
+            <h2>Narayana junior college</h2>
+            <span>Till 2022</span>
+        </div>
+        <div class="school">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcStzDk8bQBIhY_8TOAhzcxenp8ZNr97i59uZCHDi-Bbd6QqJTX9Rk4-Wukpmgkb2Ju69xE&usqp=CAU" alt="SRM University">
+            <h2>SRM University</h2>
+            <span>Till 2026</span>
+        </div>
+    </div>
+</body>
+</html>
